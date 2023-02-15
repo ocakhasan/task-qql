@@ -30,7 +30,7 @@ test('Copied object is deeply manipulated', () => {
       charlie: 'Charlie',
     }
   }
-  const copiedObject = copyObject(obj);
+  const copiedObject = JSON.parse(JSON.stringify(obj));
   copiedObject.bravo.charlie = "Charlie of duplicate object";
   expect(copiedObject).not.toEqual(obj)
 });

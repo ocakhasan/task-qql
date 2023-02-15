@@ -24,9 +24,13 @@ func newVisitor() *visitor {
 func (v *visitor) EnterDocument(operation, definition *ast.Document) {
 	for _, r := range operation.RootNodes {
 		switch r.Kind {
-		case ast.NodeKindInterfaceTypeDefinition:
-			name := operation.InterfaceTypeDefinitionNameString(r.Ref)
-			v.typeNames = append(v.typeNames, name)
+		// disable the interface type
+		/*
+			case ast.NodeKindInterfaceTypeDefinition:
+				name := operation.InterfaceTypeDefinitionNameString(r.Ref)
+				v.typeNames = append(v.typeNames, name)
+
+		*/
 		case ast.NodeKindObjectTypeDefinition:
 			name := operation.ObjectTypeDefinitionNameString(r.Ref)
 			v.typeNames = append(v.typeNames, name)

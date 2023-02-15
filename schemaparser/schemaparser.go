@@ -31,5 +31,11 @@ func CountEnumValues(schema []byte) (int, error) {
 		return 0, report
 	}
 
-	return -1, nil
+	// Get the count value of each enum
+	result := 0
+	for _, enum := range document.EnumTypeDefinitions {
+		result += len(enum.EnumValuesDefinition.Refs)
+	}
+
+	return result, nil
 }

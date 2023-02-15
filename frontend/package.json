@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@graphiql/toolkit": "^0.8.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.3.3",
+    "graphiql": "^2.1.0",
+    "graphql": "^16.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -36,7 +40,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-env": "^7.20.2",
     "babel-jest": "^27.4.5"
   },
   "jest": {

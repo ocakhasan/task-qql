@@ -5,7 +5,6 @@ package graph
 
 import (
 	"context"
-	"fmt"
 	"io/ioutil"
 
 	"github.com/pvormste/task-gql-full-stack/graph/generated"
@@ -13,8 +12,24 @@ import (
 	"github.com/pvormste/task-gql-full-stack/schemaparser"
 )
 
-func (r *queryResolver) Heroes(ctx context.Context) ([]model.Character, error) {
-	panic(fmt.Errorf("not implemented"))
+func (r *queryResolver) Heroes(_ context.Context) ([]model.Character, error) {
+	// Return a hardcoded array of information here.
+	heroes := []model.Character{
+		model.Human{
+			Name:          "Luke Skywalker",
+			HasLightsaber: true,
+		},
+		model.Human{
+			Name:          "Han Solo",
+			HasLightsaber: false,
+		},
+		model.Droid{
+			Name:            "C-3PO",
+			PrimaryFunction: "Translator",
+		},
+	}
+
+	return heroes, nil
 }
 
 func (r *queryResolver) Types(ctx context.Context) ([]*string, error) {
